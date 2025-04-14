@@ -1,0 +1,8 @@
+{
+  "sodiumleafculling.options.leaf_culling.name": "树叶渲染模式",
+  "sodiumleafculling.options.leaf_culling.tooltip": "启用模组后，此处将改变内层树叶的渲染模式以提高性能。“镂空”：将内层部分树叶渲染为透明不可见，“实心化”：将内层部分树叶渲染为完整不透明块，类似原版“流畅”的树叶品质。",
+  "options.leaf_culling.none": "无（原版渲染）",
+  "options.leaf_culling.hollow": "镂空（传统模式，优化一般）",
+  "options.leaf_culling.solid": "简单实心化（美观之选，优化较弱）",
+  "options.leaf_culling.solid_aggressive": "积极实心化（优化最强，默认且推荐）"
+}
