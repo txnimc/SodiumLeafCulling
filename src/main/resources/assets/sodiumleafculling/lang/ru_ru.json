@@ -1,0 +1,8 @@
+{
+  "sodiumleafculling.options.leaf_culling.name": "Режим отбраковки листьев",
+  "sodiumleafculling.options.leaf_culling.tooltip": "Если включено, листья позади других листьев будут отбракованы для повышения производительности. Полый будет активно отбраковывать грани, а режим Solid (сплошное изображение) позволит быстро отрисовывать листья сплошными блоками за другими листьями.",
+  "options.leaf_culling.none": "Никакой",
+  "options.leaf_culling.hollow": "Полый",
+  "options.leaf_culling.solid": "Сплошной",
+  "options.leaf_culling.solid_aggressive": "Агрессивный сплошной"
+}
