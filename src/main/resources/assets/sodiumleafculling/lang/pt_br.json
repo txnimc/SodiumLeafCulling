@@ -1,0 +1,8 @@
+﻿{
+  "sodiumleafculling.options.leaf_culling.name": "Modo de Eliminação de Folhas",
+  "sodiumleafculling.options.leaf_culling.tooltip": "Se ativado, as folhas atrás de outras folhas serão selecionadas para melhorar o desempenho. O modo Oco selecionará agressivamente as faces, e o modo Sólido permitirá a renderização rápida de blocos sólidos de folhas atrás de outras folhas.",
+  "options.leaf_culling.none": "Nenhum",
+  "options.leaf_culling.hollow": "Oco",
+  "options.leaf_culling.solid": "Sólido",
+  "options.leaf_culling.solid_aggressive": "Agressivo Sólido"
+}
