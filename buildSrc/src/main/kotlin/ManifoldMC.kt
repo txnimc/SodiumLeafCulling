@@ -10,7 +10,7 @@ class ManifoldMC {
             isActive: Boolean,
             clearMainProject: Boolean
         ) {
-            val mcVers = listOf("1.18.2", "1.19.2", "1.20.1", "1.21.1")
+            val mcVers = listOf("1.18.2", "1.19.2", "1.20.1", "1.21.1", "1.21.5")
             val mcIndex = mcVers.indexOf(mcString)
             val argList = ArrayList<String>()
 

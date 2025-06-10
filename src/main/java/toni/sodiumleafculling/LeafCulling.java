@@ -5,6 +5,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.LeavesBlock;
+
 #if AFTER_21_1
 import net.caffeinemc.mods.sodium.client.SodiumClientMod;
 #else
@@ -15,7 +16,7 @@ public class LeafCulling {
     private static final Direction[] VALUES = Direction.values();
 
     public static boolean isFacingAir(BlockGetter view, BlockPos pos, Direction facing) {
-        var vec = facing.getNormal();
+        var vec = getDirectionVector(facing);
         return view.getBlockState(pos.offset(vec)).getBlock() instanceof AirBlock;
     }
 
@@ -25,13 +26,17 @@ public class LeafCulling {
             if (isAggressiveMode && (dir == Direction.DOWN || dir == Direction.UP))
                 continue;
 
-            var dirPos = pos.offset(dir.getNormal());
+            var dirPos = pos.offset(getDirectionVector(dir));
             var blockstate = view.getBlockState(dirPos);
             if (blockstate.getBlock() instanceof LeavesBlock)
                 continue;
 
-            if (blockstate.isSolidRender(view, pos))
-                continue;
+            #if AFTER_21_5
+            if (blockstate.isSolid())
+            #else
+            if (blockstate.isSolidRender(view, dirPos))
+            #endif
+            continue;
 
             return false;
         }
@@ -43,7 +48,7 @@ public class LeafCulling {
         if (isFacingAir(view, pos, facing))
             return false;
 
-        var vec = facing.getNormal();
+        var vec = getDirectionVector(facing);
         var cull = true;
         for (int i = 1; i <= depth; i++) {
             var state = view.getBlockState(pos.offset(vec.multiply(i)));
@@ -51,5 +56,9 @@ public class LeafCulling {
         }
 
         return cull;
+    }
+
+    private static BlockPos getDirectionVector(Direction direction) {
+        return new BlockPos(direction.getStepX(), direction.getStepY(), direction.getStepZ());
     }
 }

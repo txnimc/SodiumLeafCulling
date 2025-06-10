@@ -26,7 +26,8 @@ extensions.configure<StonecutterSettings> {
 		}
 
 		//mc("1.20.1", "fabric" , "forge")
-		mc("1.21.1", "fabric" , "neoforge")
+		//mc("1.21.1", "fabric" , "neoforge")
+		mc("1.21.5", "fabric")
 	}
 	create(rootProject)
 }

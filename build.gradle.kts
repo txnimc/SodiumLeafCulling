@@ -14,6 +14,11 @@ val settings = object : TxniTemplateSettings {
 				deps.modImplementation(modrinth("sodium", "mc1.21.1-0.6.13-fabric"))
 				deps.runtimeOnly(modrinth("moreculling", "0.27.1"))
 			}
+			else if (mcVersion == "1.21.5")
+			{
+				deps.modImplementation(modrinth("sodium", "mc1.21.5-0.6.13-fabric"))
+				deps.runtimeOnly(modrinth("moreculling", "1.3.1"))
+			}
 			else
 			{
 				deps.modImplementation(modrinth("sodium", "mc1.20.1-0.5.11"))
@@ -72,7 +77,7 @@ plugins {
 	`maven-publish`
 	kotlin("jvm")
 	kotlin("plugin.serialization")
-	id("dev.kikugie.j52j") version "1.0"
+	id("dev.kikugie.j52j") version "2.0"
 	id("dev.architectury.loom")
 	id("me.modmuss50.mod-publish-plugin")
 	id("systems.manifold.manifold-gradle-plugin")
@@ -142,6 +147,7 @@ dependencies {
 			"1.19.2" -> "1.19.2:2022.11.27"
 			"1.20.1" -> "1.20.1:2023.09.03"
 			"1.21.1" -> "1.21:2024.07.28"
+			"1.21.5" -> "1.21:2024.07.28"
 			else -> ""
 		}
 		parchment("org.parchmentmc.data:parchment-$parchmentVersion@zip")
